@@ -1,0 +1,12 @@
+<!doctype html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {% for img in imgs %}
+    <a href="showBigPicture.php?id={{ img["id"] }}"><img src={{ img["smallPictureLink"] }}></a>
+    {% endfor %}
+</body>
+</html>
