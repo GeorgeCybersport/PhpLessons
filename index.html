@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOMEWORK 4</title>
+</head>
+<body>
+    <div id="root"></div>
+    <button>больше товаров</button>
+    <script>
+        let offset=0;
+        function getItems(){
+            fetch("http://localhost/4thHomework/Pagination.php?offset="+offset).then(res=>res.json())
+                .then(result=>{
+                    if(result.response==="ok"){
+                        const root=document.querySelector("#root");
+                        result.data.items.forEach((tagData)=>{
+                            console.log(tagData);
+                            root.insertAdjacentHTML("beforeend", `<div>${tagData.name}</div>`);
+                        })
+                        if(!result.data.next){
+                            button.disabled="true";
+                        }
+                        offset+=5;
+                    }
+                });
+
+        }
+        window.addEventListener("load", getItems);
+        const button=document.querySelector("button");
+        button.addEventListener("click", getItems);
+    </script>
+</body>
+</html>
