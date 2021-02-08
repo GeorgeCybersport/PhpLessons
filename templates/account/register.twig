@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+    <a href="/login">Authorization</a>
+
+    <form action="" method="post">
+        name: <input name="name"><br/>
+        login: <input name="login"><br/>
+        password: <input name="password" type="password"><br/>
+        repeat password: <input name="repeat" type="password"><br/>
+        <input type="submit" value="send">
+    </form>
+{% endblock %}
