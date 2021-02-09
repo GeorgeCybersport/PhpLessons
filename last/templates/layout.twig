@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% if user %}
+        Hello {{ user.userName }}
+        <a style="float: right" href="logout">Выйти</a>
+        <br>
+    {% else %}
+        <a style="float: right" href="login">Войти</a>
+        <br>
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>
