@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+    {% if history %}
+        <h3>Your last history</h3>
+        {% for link in history %}
+            <div>{{ link.url }}</div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
